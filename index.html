@@ -1,13 +1,35 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "css/style.css">
-    <title>WEBGINE</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Webgine - A simple 2D game engine.">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Webgine</title>
 </head>
 <body>
-    <canvas id = "webgl-canvas"></canvas>
-    <script src = "js/main.js"></script>
+    <div class="wrapper">
+
+        <nav class="nav-bar"> NAVIGATION BAR </nav>
+
+        <div class="editor">
+            
+            <aside class="editor__section editor__section--left">
+                <div class="hierarchy">SCENE HIERARCHY</div>
+                <div class="details">DETAILS</div>
+            </aside>
+
+            <main class="editor__section editor__section--middle">
+                <canvas id="webgl-canvas" class="canvas"></canvas>
+                <div class="project-files">PROJECT FILES</div>
+            </main>
+
+            <aside class="editor__section editor__section--right">
+                <div class="inspector">INSPECTOR</div>
+            </aside>
+            
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
