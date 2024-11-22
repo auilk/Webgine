@@ -7,29 +7,14 @@
     <title>Webgine</title>
 </head>
 <body>
-    <div class="wrapper">
-
-        <nav class="nav-bar"> NAVIGATION BAR </nav>
-
-        <div class="editor">
-            
-            <aside class="editor__section editor__section--left">
-                <div class="hierarchy">SCENE HIERARCHY</div>
-                <div class="details">DETAILS</div>
-            </aside>
-
-            <main class="editor__section editor__section--middle">
-                <canvas id="webgl-canvas" class="canvas"></canvas>
-                <div class="project-files">PROJECT FILES</div>
-            </main>
-
-            <aside class="editor__section editor__section--right">
-                <div class="inspector">INSPECTOR</div>
-            </aside>
-            
-        </div>
+    <div class="container">
+        <nav class="nav-bar">NAVIGATION BAR</nav>
+        <div class="scene-hierarchy">SCENE HIERARCHY</div>
+        <div class="details">DETAILS</div>
+        <canvas id="webgl-canvas"class="canvas"></canvas>
+        <div class="project-files">PROJECT FILES</div>
+        <div class="inspector">INSPECTOR</div>
     </div>
-
     <script src="js/main.js"></script>
 </body>
 </html>

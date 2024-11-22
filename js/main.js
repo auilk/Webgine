@@ -53,14 +53,34 @@ function CreateProgram(gl, vertShader, fragShader)
     return program;
 }
 
+function Render(gl, indices, shaderProgram, VAO)
+{
+    gl.clearColor(0.1, 0.1, 0.1, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+    gl.bindVertexArray(VAO);
+    gl.useProgram(shaderProgram);
+
+    gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
+
+    requestAnimationFrame(() => Render(gl, indices, shaderProgram, VAO));
+}
+
 async function main()
 {
     const canvas = document.getElementById("webgl-canvas");
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
-
     /** @type {WebGL2RenderingContext} */
     const gl = canvas.getContext('webgl2');
+
+    const SetCanvasSize = () => {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
+        gl.viewport(0, 0, canvas.width, canvas.height);
+    };
+
+    SetCanvasSize();
+    window.addEventListener('resize', SetCanvasSize);
 
     const shaderSrcs = await LoadShaders("assets/shaders/vertex.vert", "assets/shaders/fragment.frag");
 
@@ -95,16 +115,7 @@ async function main()
 
     gl.bindVertexArray(null);
 
-    gl.bindVertexArray(VAO);
-    gl.useProgram(shaderProgram);
-
-    gl.clearColor(0.1, 0.1, 0.1, 1.0);
-    gl.clear(gl.COLOR_BUFFER_BIT);
-
-    gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
-
-    gl.useProgram(null);
-    gl.bindVertexArray(null);
+    Render(gl, indices, shaderProgram, VAO);
 }
 
 main();
