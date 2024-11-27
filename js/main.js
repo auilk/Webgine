@@ -1,7 +1,9 @@
+import {WindowOutline} from "./windowOutline.js";
+
 async function FetchFile(path)
 {
     const response = await fetch(path);
-    script = await response.text();
+    const script = await response.text();
     return script;
 }
 
@@ -72,9 +74,13 @@ async function main()
     /** @type {WebGL2RenderingContext} */
     const gl = canvas.getContext('webgl2');
 
+    const winOutline = new WindowOutline();
+
     const SetCanvasSize = () => {
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
+        canvas.width = canvas.parentElement.getBoundingClientRect().width;
+        canvas.height = canvas.parentElement.getBoundingClientRect().height - 40;
+
+        winOutline.HandleResize();
 
         gl.viewport(0, 0, canvas.width, canvas.height);
     };
