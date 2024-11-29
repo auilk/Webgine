@@ -8,8 +8,8 @@
     --purple-light: #cb6ff9;
     --yellow: #fcff45;
     --yellow-light: #fdff87;
-    --white: #F1F0E1
-    
+    --white: #f1f0e1;
+    --dark-blue: #101015;
 }
 
 * {
@@ -22,7 +22,6 @@
 
 body {
     margin: 0;
-    padding: 8px;
     width: 100vw;
     height: 100vh;
     background-color: #050505;
@@ -33,26 +32,28 @@ body {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 10fr 10fr;
     grid-template-areas: 
-        "navbar     navbar          navbar"
+        "menubar     menubar          menubar"
         "hierarchy  canvas          inspector"
         "details    project-files   inspector";
     width: 100%;
     height: 100%;   
-    gap: 0.3rem;
+    gap: 0.2rem;
 }
 
-.scene-hierarchy, .details, .project-files, .inspector, .nav-bar {
+.scene-hierarchy, .details, .project-files, .inspector {
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center; 
-    color: #141414;
 }
 
-.nav-bar {
-    grid-area: navbar;
-    background-color: #101015;
-    border-radius: 10px;
+.menu-bar {
+    grid-area: menubar;
+    background-color: var(--dark-blue);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 40px;
+    height: fit-content;
 }
 
 .scene-hierarchy {
@@ -88,7 +89,46 @@ body {
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-rows: 40px;
+    background-color: var(--dark-blue);
+}
+
+.left-list, .middle-list, .right-list {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.left-list li, .middle-list li, .right-list li {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px 0 10px;
     background-color: #101015;
+    transition: background-color var(--tab-anim-len) ease-in-out;
+    cursor: pointer;
+}
+
+.left-list li:hover, .middle-list li:hover, .right-list li:hover {
+    background-color: var(--purple-light);
+}
+
+.left-list {
+    grid-template-columns: auto auto auto auto 1fr 1fr;
+}
+
+.middle-list {
+    grid-template-columns: auto auto;
+    justify-content: center;
+}
+
+.right-list {
+    grid-template-columns: auto auto;
+    justify-content: right;
 }
 
 .title-bar {
