@@ -2,6 +2,10 @@
 
 **Webgine** is a personal project aimed at learning JavaScript by building a simple 2D game engine that runs in the browser. This project helps develop JavaScript skills while creating a fun and functional tool. Webgine also uses WebGL for rendering, providing an opportunity to learn WebGL alongside JavaScript.
 
+## Live Demo
+
+[WEBGINE DEMO](https://auilk.github.io/Webgine/)
+
 ## Project Goals
 
 - **Learn JavaScript**: Improve proficiency by building a hands-on project.
@@ -16,10 +20,6 @@
 2. **Collision Detection**: Implement basic Axis-Aligned Bounding Box (AABB) collision detection.
 3. **Game Logic**: Allow users to script their games using JavaScript.
 4. **Asset Management**: Load and store assets like textures and shaders.
-
-## Live Demo
-
-[WEBGINE DEMO](https://auilk.github.io/Webgine/)
 
 ## How to Contribute
 
