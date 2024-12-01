@@ -10,18 +10,52 @@
     <div class="wrapper">
         <nav class="menu-bar">
             <ul class="left-list">
-                <li>File</li>
-                <li>Edit</li>
-                <li>Window</li>
+                <li class="menu-btn dropdown-btn">File
+                    <ul class="dropdown">
+                        <li>New Project</li>
+                        <li>Open Project</li>
+                        <li>Close Project</li>
+                        <li class="dividor"></li>
+                        <li>Save</li>
+                        <li>Save As...</li>
+                        <li class="dividor"></li>
+                        <li>Exit</li>
+                    </ul>
+                </li>
+                <li class="menu-btn dropdown-btn">Edit
+                    <ul class="dropdown">
+                        <li>Undo</li>
+                        <li>Redo</li>
+                        <li class="dividor"></li>
+                        <li>Cut</li>
+                        <li>Copy</li>
+                        <li>Paste</li>
+                        <li class="dividor"></li>
+                        <li>Find</li>
+                        <li>Replace</li>
+                    </ul>
+                </li>
+                <li class="menu-btn dropdown-btn">Window
+                    <ul class="dropdown">
+                        <li>New Window</li>
+                        <li>Close Window</li>
+                        <li class="dividor"></li>
+                        <li>Split Window</li>
+                        <li>Join Window</li>
+                        <li class="dividor"></li>
+                        <li>Focus Window</li>
+                        <li>Toggle Fullscreen</li>
+                    </ul>
+                </li>
             </ul>
 
             <ul class="middle-list">
-                <li>
+                <li class="menu-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 100 100">
                         <path d="M15 0 L85 40 L15 75 Z" fill="#FFFFFF"></path>
                     </svg>
                 </li>
-                <li>
+                <li class="menu-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 100 100">
                         <rect width="20px" height="80" x="20" y="0" fill="#FFFFFF"></rect>
                         <rect width="20px" height="80" x="60" y="0" fill="#FFFFFF"></rect>
@@ -30,8 +64,18 @@
             </ul>
 
             <ul class="right-list">
-                <li>Layout</li>
-                <li>Settings</li>
+                <li class="menu-btn dropdown-btn">Layout
+                    <ul class="dropdown">
+                        <li>Preset Layout 1</li>
+                        <li>Preset Layout 2</li>
+                        <li>Preset Layout 3</li>
+                        <li>Preset Layout 4</li>
+                        <li class="dividor"></li>
+                        <li>Save Layout</li>
+                        <li>Load Layout</li>
+                    </ul>
+                </li>
+                <li class="menu-btn">Settings</li>
             </ul>
 
         </nav>
@@ -168,10 +212,11 @@
                     <path pathLength="1"></path>
                 </svg>
             </div>
-        </div>
+        </div> 
         
     </div>
     
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="js/menuBar.js"></script>
 </body>
 </html>
