@@ -21,3 +21,9 @@ body {
     position: absolute;
     background-color: greenyellow;
 }
+
+.resizer {
+    position: absolute;
+    background-color: palevioletred;
+    z-index: 1;
+}

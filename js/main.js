@@ -1,12 +1,12 @@
 import Vector2 from "./utils/vector2.js";
 import WinElement from "./window-manager/window_element.js";
+import WindowManager from "./window-manager/window_manager.js";
 
 const container = document.getElementById("container");
+const containerRect = container.getBoundingClientRect();
 
-const window1 = new WinElement("window", container);
-window1.position = new Vector2(500, 50);
-window1.scale = new Vector2(100, 100);
+WindowManager.CanSplitWindows(container);
 
-const window2 = new WinElement("window", container);
-window2.position = new Vector2(100, 400);
-window2.scale = new Vector2(150, 150);
+const win = new WinElement("window", container);
+win.position = new Vector2(containerRect.width / 2, containerRect.height / 2);
+win.scale = new Vector2(containerRect.width, containerRect.height);
